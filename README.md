@@ -2,7 +2,7 @@
 
 ## The what?
 bike-scan is a wrapper to turn ike-scan into a brute-force tool. It does this by testing a remote host with every possible combination of transforms, in the chosen order of 'rarity'. Eg. all DES, 3DES, AES, MD5, SHA1, PSK, MOD1 types before testing less common combinations.
-By default, bike-scan will try and brute-force transforms in main mode echo first, then move onto aggressive mode.
+By default, bike-scan will try and brute-force transforms in main mode first, then move onto aggressive mode.
 
 ## The why?
 *"Doesn't ike-scan already do this?"*
