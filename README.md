@@ -7,7 +7,7 @@ By default, bike-scan will try and brute-force transforms in main mode first, th
 ## The why?
 *"Doesn't ike-scan already do this?"*
 
-Well, no. ike-scan is great for finding hosts running ike on UDP port 500, however I've found some VPN servers to quite finicky requiring exact transform requests before kicking off a handshake and revealing their secrets.
+Well, no. ike-scan is great for finding hosts running IKE on UDP port 500, however I've found some VPN servers to be quite finicky requiring exact transform requests before kicking off a handshake and revealing their secrets.
 As a penetration tester I just wanted one tool I could point at a VPN server and discover all the transforms it supports.
 
 *"Main mode? aren't you only really interested in aggressive mode / dump PSK / crack etc?"*
