@@ -1,8 +1,8 @@
 # bike-scan
 
 ## The what?
-bike-scan is a wrapper to turn ike-scan into a brute-force tool. It does this by testing a remote host with every possible combination of transforms, in the chosen order of 'rarity'. Eg. all DES, 3DES, AES, MD5, SHA1, PSK, MOD1 types before testing less common combinations."
-By default, bike-scan will try and brute-force transforms in main mode echo "first, then move onto aggressive mode.
+bike-scan is a wrapper to turn ike-scan into a brute-force tool. It does this by testing a remote host with every possible combination of transforms, in the chosen order of 'rarity'. Eg. all DES, 3DES, AES, MD5, SHA1, PSK, MOD1 types before testing less common combinations.
+By default, bike-scan will try and brute-force transforms in main mode echo first, then move onto aggressive mode.
 
 ## The why?
 *"Doesn't ike-scan already do this?"*
@@ -16,7 +16,7 @@ Yes, certainly handy, however discovering all the main mode transforms can give 
 
 *"Bash? Why didn't you use python, ruby, assembly, Cobol or some other obscure language?"*
 
-Because ike-scan does everything needed except brute-force. It handles sockets, sets up the handshake and tells you what it finds. It's also very quick. And because pure Bash. Look Ma, no grep!
+Because ike-scan does everything needed except brute-force. It handles sockets, sets up the handshake and tells you what it finds. It's also very quick. And because pure Bash, look Ma, no grep!
 
 *"Why did, or didn't you do $blah?"*
 
