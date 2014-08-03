@@ -3,42 +3,42 @@
 logo() {
 	echo " _     _ _                                 " 
 	echo "| |__ (_) | _____       ___  ___ __ _ _ __  "
-	echo "| '_ \| | |/ / _ \_____/ __|/ __/ _\` | '_ \ "
+	echo "| '_ \| | |/ / _ \_____/ __|/ __/ _\` | '_ \"
 	echo "| |_) | |   <  __/_____\__ \ (_| (_| | | | |"
 	echo "|_.__/|_|_|\_\___|     |___/\___\__,_|_| |_|"
-	echo "Brute force using ike-scan              v1.0"
+	echo "Brute force using ike-scan              v1.1"
 	echo -e "                       www.interspective.net\n"
 }
 
 usage() {
-        echo "Usage: $0 [options] [host]"
-        echo
-        echo "bike-scan is a wrapper to turn ike-scan into a brute-force tool."
+	echo "Usage: $0 [options] [host]"
+	echo
+	echo "bike-scan is a wrapper to turn ike-scan into a brute-force tool."
 	echo "It does this by testing a remote host with every possible combination of"
-       	echo "transforms, in the chosen order of 'rarity'. Eg. all DES, 3DES, AES, MD5,"
-	echo "SHA1, PSK, MOD1 types before testing less common combinations."
+	echo "transforms, in the chosen order of 'rarity'. Eg. all DES, 3DES, AES, MD5,"
+	echo "SHA1, PSK, MOD768 types before testing less common combinations."
 	echo "By default, bike-scan will try and brute-force transforms in main mode"
 	echo "first, then move onto aggressive mode."
-	echo 
-        echo "Options:"
-        echo
-        echo "--help or -h              Display this usage message and exit."
-        echo
-        echo "--main or -M              Main mode scan only."
-        echo
-        echo "--aggressive or -A        Aggressive mode scan only."
-	echo 
+	echo
+	echo "Options:"
+	echo
+	echo "--help or -h              Display this usage message and exit."
+	echo
+	echo "--main or -M              Main mode scan only."
+	echo
+	echo "--aggressive or -A        Aggressive mode scan only."
+	echo
 	echo "-AM                       Switch the mode order to Aggressive then Main"
-        echo 
-        echo "--rarity=<r> or -R<r>     Specify transform 'rarity' and order."
+	echo
+	echo "--rarity=<r> or -R<r>     Specify transform 'rarity' and order."
 	echo "                          Options include, c, r and v, for Common, Rare"
 	echo "                          and Very rare. Default --rarity=cr"
 	echo
 	echo " Example: $0 -Rcr -AM [host]"
-       	echo "                          Scan Common and Rare transform combinations"
+	echo "                          Scan Common and Rare transform combinations"
 	echo "                          in Aggressive mode, then Main mode."
 	echo
-        doexit
+	doexit
 }
 
 
