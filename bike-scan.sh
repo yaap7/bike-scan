@@ -32,7 +32,7 @@ usage() {
         echo 
         echo "--rarity=<r> or -R<r>     Specify transform 'rarity' and order."
 	echo "                          Options include, c, r and v, for Common, Rare"
-	echo "                          and Very rare. Default --rarity=c"
+	echo "                          and Very rare. Default --rarity=cr"
 	echo
 	echo " Example: $0 -Rcr -AM [host]"
        	echo "                          Scan Common and Rare transform combinations"
@@ -248,7 +248,7 @@ echo -e "[+] Done. List contains ${#array[@]} transform combinations.\n"
 }
 
 # Set default 'rarity' options and order for building transform array
-#rarityOptions="common rare vrare"
+rarityOptions="common rare"
 
 hostError() {
         echo -e "[-] Error: hostname not specified.\n"
