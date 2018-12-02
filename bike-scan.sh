@@ -1,7 +1,7 @@
 #!/bin/bash
 
 logo() {
-	echo " _     _ _                                 " 
+	echo " _     _ _                                 "
 	echo "| |__ (_) | _____       ___  ___ __ _ _ __  "
 	echo "| '_ \| | |/ / _ \_____/ __|/ __/ _\` | '_ \ "
 	echo "| |_) | |   <  __/_____\__ \ (_| (_| | | | |"
@@ -51,7 +51,7 @@ usage() {
 # array element from 'rare' to 'common' will ensure that it will be tested sooner.
 
 crypt=( [0]="Encryption Algorithm"
-	[1]="DES,common" 
+	[1]="DES,common"
 	[2]="IDEA,vrare"
 	[3]="Blowfish,rare"
 	[4]="RC5,vrare"
@@ -161,7 +161,8 @@ ikeMode="${2//M/}"
 		fi
 		# This checks to see if the response is a main or aggressive mode handshake
 		# and echos the results to the user if it is. \o/
-		if [[ "${scan[1]}" =~ "Handshake returned" ]]; then 
+		if [[ "${scan[1]}" =~ "Handshake returned" ]]; then
+			echo "Successful command: ike-scan -r 1 -M $ikeMode -a $2 $1"
 			echo "${scan[1]}"
 			for scanElement in $(seq 2 $((${#scan[@]} - 3))); do
 				echo -e "\t${scan[$scanElement]}"
@@ -213,7 +214,7 @@ arrayIndex="0"
 echo -e "[+] Building transform list using rarity order: ${1/vrare/very rare} ${2/vrare/very rare} ${3/vrare/very rare}\n"
 for cryptRarity in $1 $2 $3; do
 	for cryptElement in ${!crypt[@]}; do
-		if [[ ${crypt[$cryptElement]#*,} == $cryptRarity ]]; then 
+		if [[ ${crypt[$cryptElement]#*,} == $cryptRarity ]]; then
 			for hashRarity in $1 $2 $3; do
 				for hashElement in ${!hash[@]}; do
 					if [[ ${hash[$hashElement]#*,} == $hashRarity ]]; then
@@ -264,7 +265,7 @@ else
 	hostname=
 while test -n "$1"; do
 	case "$1" in
-		""|--help|-h) 
+		""|--help|-h)
 			logo
 			usage
 			shift
@@ -296,7 +297,7 @@ while test -n "$1"; do
 				retVal="1"
 				usage
 			# If user supplied 'rarity' options, reset option list ..
-			elif [[ ${#rarity} -gt 0 ]]; then 
+			elif [[ ${#rarity} -gt 0 ]]; then
 				rarityOptions=
 			# .. and build 'rarity' options list with order specified by user.
 			fi
